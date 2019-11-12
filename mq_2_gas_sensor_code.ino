@@ -1,20 +1,9 @@
-/*******
- 
- All the resources for this project:
- https://www.hackster.io/Aritro
-
-*******/
-
-int redLed = 12;
-int greenLed = 11;
 int buzzer = 10;
 int smokeA0 = A5;
 // Your threshold value
 int sensorThres = 400;
 
 void setup() {
-  pinMode(redLed, OUTPUT);
-  pinMode(greenLed, OUTPUT);
   pinMode(buzzer, OUTPUT);
   pinMode(smokeA0, INPUT);
   Serial.begin(9600);
@@ -28,14 +17,11 @@ void loop() {
   // Checks if it has reached the threshold value
   if (analogSensor > sensorThres)
   {
-    digitalWrite(redLed, HIGH);
-    digitalWrite(greenLed, LOW);
+    Serial.print("Flammable Gas Detected");
     tone(buzzer, 1000, 200);
   }
   else
   {
-    digitalWrite(redLed, LOW);
-    digitalWrite(greenLed, HIGH);
     noTone(buzzer);
   }
   delay(100);
