@@ -1,0 +1,40 @@
+const int motorPin = 13;
+const int motorPin2 = 12;
+const int motorPin3 = 11;
+const int motorPin4 = 10;
+const int motorPin5 = 9;
+
+void setup() {
+  pinMode(motorPin, OUTPUT);
+  pinMode(motorPin2, OUTPUT);
+  pinMode(motorPin3, OUTPUT);
+  pinMode(motorPin4, OUTPUT);
+  pinMode(motorPin5, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(motorPin, HIGH);
+  delay(40);
+  digitalWrite(motorPin, LOW);
+  delay(120);
+
+  digitalWrite(motorPin2, HIGH);
+  delay(30);
+  digitalWrite(motorPin2, LOW);
+  delay(890);
+
+  digitalWrite(motorPin3, HIGH);
+  delay(40);
+  digitalWrite(motorPin3, LOW);
+  delay(150);
+
+  digitalWrite(motorPin4, HIGH);
+  delay(30);
+  digitalWrite(motorPin4, LOW);
+  delay(60);
+
+  digitalWrite(motorPin5, HIGH);
+  delay(35);
+  digitalWrite(motorPin5, LOW);
+  delay(800);
+}
