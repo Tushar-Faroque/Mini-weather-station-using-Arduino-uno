@@ -1,28 +1,33 @@
-int buzzer = 10;
-int smokeA0 = A5;
-// Your threshold value
-int sensorThres = 400;
+#include <MQ2.h>
 
-void setup() {
-  pinMode(buzzer, OUTPUT);
-  pinMode(smokeA0, INPUT);
+//change this with the pin that you use
+int pin = 9;
+int lpg, co, smoke;
+
+MQ2 mq2(pin);
+
+void setup(){
   Serial.begin(9600);
+  
+  mq2.begin();
 }
 
-void loop() {
-  int analogSensor = analogRead(smokeA0);
-
-  Serial.print("Pin A0: ");
-  Serial.println(analogSensor);
-  // Checks if it has reached the threshold value
-  if (analogSensor > sensorThres)
-  {
-    Serial.print("Flammable Gas Detected");
-    tone(buzzer, 1000, 200);
-  }
-  else
-  {
-    noTone(buzzer);
-  }
-  delay(100);
+void loop(){
+  
+  /*read the values from the sensor, it returns
+  *an array which contains 3 values.
+  * 1 = LPG in ppm
+  * 2 = CO in ppm
+  * 3 = SMOKE in ppm
+  */
+  float* values= mq2.read(true); //set it false if you don't want to print the values in the Serial
+  
+  //lpg = values[0];
+  lpg = mq2.readLPG();
+  //co = values[1];
+  co = mq2.readCO();
+  //smoke = values[2];
+  smoke = mq2.readSmoke();
+  
+  delay(1000);
 }
