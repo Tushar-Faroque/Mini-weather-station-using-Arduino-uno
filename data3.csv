@@ -1,4 +1,4 @@
- Date & Time, Temp *C,Humidity % , Air Quality, Water Level
+ Date_Time, Temp,Humidity, Air_Quality, Water_Level
 [2019-12-03 12:06:02.808] ,21,46,224,202
 [2019-12-03 12:06:02.808] ,21,45,90,89
 [2019-12-03 12:06:02.808] ,21,45,158,158
