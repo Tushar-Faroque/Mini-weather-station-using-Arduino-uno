@@ -75,8 +75,13 @@ WSGI_APPLICATION = 'weather_station_web.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'grfaekir'),
+        'USER': 'grfaekir',
+        'PASSWORD': '02E4QDEh5bcP0w88g5tIdPsxsc9o-y0x',
+        'HOST': 'satao.db.elephantsql.com',
+        'PORT': '5432'
+
     }
 }
 
