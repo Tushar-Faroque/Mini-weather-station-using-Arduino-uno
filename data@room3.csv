@@ -1,4 +1,4 @@
-  Temp *C, Humidity %, Air Quality, Water Level, Temp *C(mob app),Humidity %(mob app)
+  Temp, Humidity, Air_Quality, Water_Level, Temp_mob_app,Humidity_mob_app
 29,57,413,2,27,54
 29,57,368,2,27,54
 29,57,344,2,27,54
