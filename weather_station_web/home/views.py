@@ -15,6 +15,9 @@ def ac_room(request):
 def kitchen(request):
     return render(request, 'home/kitchen.html')
 
+def high_risk(request):
+    return render(request, 'home/highrisk.html')
+
 def data1_view(request):
     # Create the HttpResponse object with the appropriate CSV header.
     obj = data1.objects.get(id=1)
