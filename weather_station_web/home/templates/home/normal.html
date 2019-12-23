@@ -47,29 +47,24 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}">about us</a>
                     </li>
-
-
                 </ul>
             </div>
         </nav>
-        <table>
-            <tr>
-                <th>Date_Time</th>
-                <th>Temp</th>
-                <th>Humidity</th>
-                <th>Air_Quality</th>
-                <th>Water_Level</th>
-            </tr>
-            {% for item in query_results %}
-            <tr>
-                <td>{{ item.Date_Time }}</td>
-                <td>{{ item.Temp }}</td>
-                <td>{{ item.Humidity }}</td>
-                <td>{{ item.Air_Quality }}</td>
-                <td>{{ item.Water_Level }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+        <!-- <img src="{% static 'img/Normal Room Temp.png' %}" class="img-fluid rounded float-left" alt="Responsive image">
+        <img src="{% static 'img/Normal Room Humidity.png' %}" class="img-fluid rounded mx-auto" alt="Responsive image"> -->
+        <div class="well text-center">
+            <div class="col-md-12">
+                <h4>Data Analysis</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="#"><img src="{% static 'img/Normal Room Temp.png' %}" alt="inn_logo"></a>
+                </div>
+                <div class="col-md-6">
+                    <a href="#"><img src="{% static 'img/Normal Room Humidity.png' %}" alt="ccs_logo"></a>
+                </div>
+            </div>
+        </div>
     </header>
 
 </body>
