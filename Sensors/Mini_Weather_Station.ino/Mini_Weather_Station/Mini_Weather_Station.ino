@@ -1,11 +1,10 @@
 #include "dht.h"
 #include "MQ135.h"
-#include "MQ2.h"
 
 //change this with the pin that you use
 int pin = 9; //for MQ-2
 int lpg, co, smoke; //for MQ-2
-MQ2 mq2(pin);
+//MQ2 mq2(pin);
  
 MQ135 gasSensor = MQ135(A0);
 int sensorPin = 8; //for MQ-135
@@ -17,13 +16,12 @@ dht DHT;
 /* Arduino Tutorial - Watel Level Sensor 40mm
    More info: */
 
-const int read = A0; //Sensor AO pin to Arduino pin A0
+//const int read = A0; //Sensor AO pin to Arduino pin A0
 int value;          //Variable to store the incomming data
 
 void setup(){
   Serial.begin(9600);
   Serial.println("Date & Time, Humidity %, Temp *C, Air Quality, Water Level");
-//  mq2.begin();
 }
 
 void loop()
@@ -64,7 +62,7 @@ void loop()
 //  smoke = mq2.readSmoke();
 
 //  Water Sensor
-  value = analogRead(read); //Read data from analog pin and store it to value variable
+  value = analogRead(A1); //Read data from analog pin and store it to value variable
   
   if (value<=480){ 
 //    Serial.println("Water level: 0mm - Empty!"); 
@@ -106,7 +104,8 @@ void loop()
   Serial.print(",");
   Serial.print(sensorValue);
   Serial.print(",");
-  Serial.println(value);
+  Serial.println(value*0);
   
-  delay(120000);
+//  delay(120000);
+  delay(5000);
 }
